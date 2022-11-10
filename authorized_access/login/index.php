@@ -12,6 +12,14 @@
             <br>
             <input type="password" name="password" placeholder="password" required>
             <br>
+            <button type="submit" name="submit">Submit</button>
         </form>
+        <?php
+        if (isset($_POST['submit'])) {
+            include 'login_valid.php';
+            header('Location: ' . $_SERVER['PHP_SELF']);
+            }
+        
+        ?>
 </body>
 </html>

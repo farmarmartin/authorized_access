@@ -18,5 +18,13 @@
             <br>
             <button type="submit" name="submit">Submit</button>
         </form>
+
+        <?php
+        if (isset($_POST['submit'])) {
+            include 'register.php';
+            header('Location: ' . $_SERVER['PHP_SELF']);
+            }
+        
+        ?>
 </body>
 </html>
