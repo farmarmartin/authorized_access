@@ -19,9 +19,10 @@ CREATE TABLE IF NOT EXISTS my_role (
 );
 
 CREATE TABLE request (
-  idrequest INT NOT NULL PRIMARY KEY,
+  idrequest INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   salt INT NOT NULL,
-  expires DATETIME NOT NULL,
+  time_up TIME NOT NULL,
   logins_idlogins INT,
-  FOREIGN KEY (logins_idlogins) REFERENCES logins(idlogins)
+  FOREIGN KEY (logins_idlogins) REFERENCES logins(idlogins),
+  UNIQUE INDEX salt_UNIQUE(salt)
 );

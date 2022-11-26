@@ -7,7 +7,7 @@
     <title>login</title>
 </head>
 <body>
-    <form action="dat/form_data.php" method="POST">
+    <form action="login_valid.php" method="POST">
             <input type="text" name="username" placeholder="username" required>
             <br>
             <input type="password" name="password" placeholder="password" required>
@@ -19,6 +19,7 @@
             include 'login_valid.php';
             header('Location: ' . $_SERVER['PHP_SELF']);
             }
+        
         
         ?>
 </body>

@@ -21,9 +21,6 @@ include_once 'dbh.php';
             <br>
             <button type="submit" name="submit">Submit</button>
         </form>
-        <script>
-            
-        </script>
 
         <?php
         if (isset($_POST['submit'])) {
