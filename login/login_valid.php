@@ -1,6 +1,6 @@
 <?php
 function validation($DP, $FP, $DU, $FU){
-    if($DU === $FU && $DP === $DU){
+    if($DU === $FU && $DP === $FP){
         echo "Přihlášen!";
     }
     else{
@@ -22,4 +22,3 @@ while($row = mysqli_fetch_assoc($result)){
     $dbPassw = $row['loginPassw'];
 }
 validation($dbPassw, $passw, $dbUsername, $user);
-

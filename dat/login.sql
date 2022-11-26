@@ -8,7 +8,8 @@ CREATE TABLE IF NOT EXISTS logins (
   loginUsername VARCHAR(45) NOT NULL,
   loginPassw VARCHAR(45) NOT NULL,
   my_role_idrole INT,
-  FOREIGN KEY (my_role_idrole) REFERENCES my_role(idrole),
+  CONSTRAINT fk_my_role FOREIGN KEY
+  (my_role_idrole) REFERENCES my_role (idrole),
   UNIQUE INDEX loginUsername_UNIQUE(loginUsername)
 );
 
@@ -23,6 +24,7 @@ CREATE TABLE request (
   salt INT NOT NULL,
   time_up TIME NOT NULL,
   logins_idlogins INT,
-  FOREIGN KEY (logins_idlogins) REFERENCES logins(idlogins),
+  CONSTRAINT fk_logins FOREIGN KEY
+  (logins_idlogins) REFERENCES logins(idlogins),
   UNIQUE INDEX salt_UNIQUE(salt)
 );
