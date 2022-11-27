@@ -1,5 +1,5 @@
 <?php
-include 'dbh.php';
+include '../dat/dbh.php';
 
 $first = $_POST['name'];
 $last = $_POST['surname'];
