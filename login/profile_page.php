@@ -27,6 +27,14 @@
         echo "<h2>Jméno:".$dbFirstname."</h2>";
         echo "<h2>Příjmení:".$dbLastname."</h2>";
         //echo "<h2>Role: ".$dbRole."</h2>";
+
+        if($dbRole === 'admin'){
+            echo "Fotka, kterou vidí pouze admin: \n";
+            echo "<img src='secretpic.jpg'>";
+        }else{
+            return null;
+        }
     ?>
+    
 </body>
 </html>
