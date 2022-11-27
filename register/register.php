@@ -13,4 +13,4 @@ mysqli_multi_query($connect, $insert);
 
 
 
-header("Location: ../index.php");
+header("Location: ../login/index.php");
