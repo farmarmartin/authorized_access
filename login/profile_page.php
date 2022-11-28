@@ -13,24 +13,25 @@
         
 
         $user = $_SESSION['username'];
-        $logins_sql = "SELECT loginName, loginSurname
-                        FROM logins 
-                        WHERE logins.loginUsername=('$user');";
+
+        $logins_sql = "SELECT loginName, loginSurname, rName
+        FROM logins
+        WHERE loginUsername=('$user');";
+
         $result_logins = mysqli_query($connect, $logins_sql);
 
         while($row = mysqli_fetch_assoc($result_logins)){
             $dbFirstname = $row['loginName'];
             $dbLastname = $row['loginSurname'];
-           // $dbRole = $row['rName'];
+            $dbRole = $row['rName'];
         }
 
         echo "<h2>Jméno:".$dbFirstname."</h2>";
         echo "<h2>Příjmení:".$dbLastname."</h2>";
-        //echo "<h2>Role: ".$dbRole."</h2>";
+        echo "<h2>Role: ".$dbRole."</h2>";
 
         if($dbRole === 'admin'){
-            echo "Fotka, kterou vidí pouze admin: \n";
-            echo "<img src='secretpic.jpg'>";
+            echo "<img src='secretpic.JPG'>";
         }else{
             return null;
         }

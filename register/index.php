@@ -1,6 +1,3 @@
-<?php
-include_once '../dat/dbh.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +18,16 @@ include_once '../dat/dbh.php';
             <br>
             <button type="submit" name="submit">Submit</button>
         </form>
-
+        <script src="../js/hash.js"></script>
+        
         <?php
+        include '../dat/dbh.php';
         if (isset($_POST['submit'])) {
             include 'register.php';
             header('Location: ' . $_SERVER['PHP_SELF']);
             }
         
         ?>
+        
 </body>
 </html>

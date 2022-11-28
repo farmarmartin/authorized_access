@@ -7,16 +7,8 @@ CREATE TABLE IF NOT EXISTS logins (
   loginSurname VARCHAR(45) NOT NULL,
   loginUsername VARCHAR(45) NOT NULL,
   loginPassw VARCHAR(45) NOT NULL,
-  my_role_idrole INT,
-  CONSTRAINT fk_my_role FOREIGN KEY
-  (my_role_idrole) REFERENCES my_role (idrole),
-  UNIQUE INDEX loginUsername_UNIQUE(loginUsername)
-);
-
-CREATE TABLE IF NOT EXISTS my_role (
-  idrole INT NOT NULL AUTO_INCREMENT,
   rName VARCHAR(45) NOT NULL,
-  PRIMARY KEY (idrole)
+  UNIQUE INDEX loginUsername_UNIQUE(loginUsername)
 );
 
 CREATE TABLE request (

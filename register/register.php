@@ -8,8 +8,8 @@ $passw = sha1($_POST['password']);
 $role = 'user';
 
 
-$insert = "INSERT INTO logins (loginName, loginSurname, loginUsername, loginPassw) VALUES ('$first', '$last', '$user', '$passw');INSERT INTO my_role (rName) VALUES ('$role');";
-mysqli_multi_query($connect, $insert);
+$insert = "INSERT INTO logins (loginName, loginSurname, loginUsername, loginPassw, rName) VALUES ('$first', '$last', '$user', '$passw', '$role');";
+mysqli_query($connect, $insert);
 
 
 
